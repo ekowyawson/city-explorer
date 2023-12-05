@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-
-const cl = i => console.log(i);
 
 const GMAP_KEY = process.env.REACT_APP_GMAP_API_KEY
 const libraries = ['places'];

@@ -8,8 +8,6 @@ import Map from "./Map.js";
 
 import cities from '../assets/cities.json';
 
-const cl = i => console.log(i);
-
 function Location(props) {
 
   const [typedInCity, setTypedInCity] = useState('New York, NY');
