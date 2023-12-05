@@ -8,7 +8,8 @@ import Errors from "./components/Errors.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const BASE_URL = process.env.REACT_APP_GEO_URL
+const API_KEY = process.env.REACT_APP_API_KEY
+const BASE_URL=`https://us1.locationiq.com/v1/search?key=${API_KEY}`
 
 function App() {
 
