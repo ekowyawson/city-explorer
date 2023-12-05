@@ -1,3 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
+main {
+  height: 85vh;
+}
+
 .main-heading {
   text-align: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 4px 4px 4px rgb(21, 50, 51);
+  background-color: cadetblue;
+  margin: 0;
+  padding: 10px;
+}
+
+.coordinates {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 16px;
+}
+
+.coordinates>li {
+  list-style: none;
+  font-style: italic;
+  color: rgb(44, 44, 44);
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.coordinates span {
+  font-weight: 500;
+  color: rgb(47, 47, 182);
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  margin: auto;
+  padding: 0 10px;
+
+}
+
+.location form {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.location-name {
+  color: rgb(30, 37, 37);
+  font-weight: 800;
+  font-style: italic;
+}
+
+.location-form {
+  margin: 10px 0;
+}
+
+.location-form .row {
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+p.instructions {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 22px;
+}
+
+p.p-info {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+p.error {
+  color: rgb(238, 1, 1);
+  background-color: rgb(5, 5, 5);
+  font-weight: 900;
+  text-align: center;
+}
+
+.map {
+  display: flex;
+  max-width: 100vw;
+  margin: auto;
+  justify-content: center;
+}
+
+.map > div {
+  border: 5px solid grey;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: cadetblue;
+  font-family: 'Times New Roman', Times, serif;
 }

@@ -73,8 +73,8 @@ City Explorer was built to empower users with a robust tool for efficient city e
 
 **Estimate of time needed to complete**: 1 hour
 
-**Start time**: _____
+**Start time**: 1800
 
-**Finish time**: _____
+**Finish time**: 2200
 
-**Actual time needed to complete**: _____
+**Actual time needed to complete**: 4 Hours
