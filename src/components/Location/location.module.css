@@ -1,0 +1,7 @@
+.location {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin: auto;
+    padding: 20px 10px;
+}

@@ -4,9 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Map from "./Map.js";
+import Map from "../Map/Map.js";
 
-import cities from '../assets/cities.json';
+import cities from '../../assets/cities.json';
+import styles from './location.module.css';
 
 function Location(props) {
 
@@ -71,8 +72,8 @@ function Location(props) {
   }
 
   return (
-    <section className='location'>
-      <p className='instructions'>Enter city and state to begin exploring:</p>
+    <section className={styles.location}>
+      <p className='instructions'>Enter a city name to begin exploring:</p>
 
       <Form
         className='location-form'
