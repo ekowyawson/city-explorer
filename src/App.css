@@ -97,6 +97,7 @@ p.instructions {
 p.p-info {
   margin-top: 5px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 p.error {
