@@ -10,6 +10,7 @@ import './App.css';
 
 const API_KEY = process.env.REACT_APP_API_KEY
 const BASE_URL=`https://us1.locationiq.com/v1/search?key=${API_KEY}`
+const WEATHER_API = 'https://city-explorer-api-iwil.onrender.com'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   const [longitude, setLongitude] = useState(-74.0060152);
   const [errors, setErrors] = useState(false);
   const [showErr, setShowErr] = useState(false);
+  const [weatherData, SetWeatherData] = useState({});
 
   // =========================== GET LOCATION FUNCTION
   async function getLocation(cityName) {
@@ -38,9 +40,25 @@ function App() {
     
   }
 
+  async function getWeather(lat, lon, city) {
+    let query = `${WEATHER_API}?lat=${lat}&lon=${lon}&q=${city}`;
+
+    try {
+      let res = await axios.get(query);
+      console.log(res);
+      SetWeatherData(res);
+
+    } catch (err) {
+      console.error(err);
+      setShowErr(true);
+      setErrors(`${err.code}: ${err.message}.`);
+    }
+  }
+
   // =========================== CHANGE CITY FUNCTION
   function changeCity(newCity) {
     getLocation(newCity);
+    getWeather(latitude, longitude, city);
   }
 
   // =========================== ERROR HANDLING
