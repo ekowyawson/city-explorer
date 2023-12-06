@@ -13,7 +13,7 @@ function Weather(props) {
 
     return (
         <section className={styles.layout}>
-            <h6 className={styles.heading}>Weather Data - <span className={styles.city}>{props.city}</span></h6>
+            <h6 className={styles.heading}>Weather Data</h6>
             
             <div className='alldata'>
                 <Container className='alldataContainer'>
