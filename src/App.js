@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Header from "./components/Header.js";
-import Location from "./components/Location.js";
-import Footer from "./components/Footer.js";
-import Errors from "./components/Errors.js";
+import Header from "./components/Header/Header.js";
+import Location from "./components/Location/Location.js";
+import Weather from "./components/Weather/Weather.js";
+import Footer from "./components/Footer/Footer.js";
+import Errors from "./components/Errors/Errors.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -21,7 +22,8 @@ function App() {
   const [longitude, setLongitude] = useState(-74.0060152);
   const [errors, setErrors] = useState(false);
   const [showErr, setShowErr] = useState(false);
-  const [weatherData, SetWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({});
+  const [isWeatherData, setIsWeatherData] = useState(false);
 
   // =========================== GET LOCATION FUNCTION
   async function getLocation(cityName) {
@@ -32,6 +34,7 @@ function App() {
       setCity(res.data[0].display_name);
       setLatitude(res.data[0].lat);
       setLongitude(res.data[0].lon);
+      getWeather(res.data[0].lat, res.data[0].lon, cityName);
 
     } catch(err) {
       console.error(err.message);
@@ -47,9 +50,8 @@ function App() {
 
     try {
       let res = await axios.get(query);
-      console.log(res.data);
-      SetWeatherData(res.data);
-
+      setWeatherData(res.data);
+      setIsWeatherData(true);
     } catch (err) {
       console.error(err);
       setShowErr(true);
@@ -60,7 +62,6 @@ function App() {
   // =========================== CHANGE CITY FUNCTION
   function changeCity(newCity) {
     getLocation(newCity);
-    getWeather(latitude, longitude, 'Amman');
   }
 
   // =========================== ERROR HANDLING
@@ -73,9 +74,26 @@ function App() {
     <>
       <Header />
       <main>
-        { showErr ? <Errors error={errors} clrErr={clearErr} /> : null }
-        <Location city={city} handleChangeCity={changeCity} latitude={latitude} longitude={longitude} weatherData={weatherData} />
+        { 
+          showErr
+          ? <Errors error={errors} clrErr={clearErr} />
+          : null 
+        }
+        
+        <Location
+          city={city}
+          handleChangeCity={changeCity}
+          latitude={latitude}
+          longitude={longitude}
+        />
+
+        { 
+          isWeatherData
+          ? <Weather weatherData={weatherData} city={city} />
+          : null
+        }
       </main>
+
       <Footer />
     </>
   );
