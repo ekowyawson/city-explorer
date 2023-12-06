@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
 
 main {
-  height: 85vh;
+  min-height: 86vh;
+}
+
+.alldata {
+  display: flex;
+  justify-content: center;
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.datakey {
+  font-weight: 700;
+  border-bottom: 2px solid black;
+}
+
+.dataval {
+  color: rgb(204, 87, 45);
+  border-bottom: 2px solid grey;
 }
 
 .main-heading {
