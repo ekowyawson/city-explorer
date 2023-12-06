@@ -1,0 +1,21 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin: auto;
+    margin-top: 20px;
+    padding: 40px 10px;
+}
+
+.heading {
+    text-align: center;
+}
+
+.city {
+    font-style: italic;
+    color: gray;
+}
+
+/* .alldataContainer {
+
+} */
