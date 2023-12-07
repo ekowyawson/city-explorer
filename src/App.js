@@ -11,8 +11,8 @@ import './App.css';
 
 const API_KEY = process.env.REACT_APP_API_KEY
 const BASE_URL=`https://us1.locationiq.com/v1/search?key=${API_KEY}`
-// const WEATHER_API = 'https://city-explorer-api-iwil.onrender.com/weather'
-const WEATHER_API = 'http://localhost:3001/weather'
+const WEATHER_API = 'https://city-explorer-api-iwil.onrender.com/weather'
+// const WEATHER_API = 'http://localhost:3001/weather'
 
 function App() {
 

@@ -10,7 +10,6 @@ import styles from './weather.module.css';
 function Weather(props) {
 
     let weatherData = props.weatherData;
-    let city = props.city;
 
     return (
         <section className={styles.layout}>
@@ -20,13 +19,10 @@ function Weather(props) {
                 <Container className='alldataContainer'>
                     {/* TIMEZONE */}
                     <Row>
-                        <Col xs={4} md={4}>
+                        <Col xs={6} md={4}>
                             <p className='datakey'>Time Zone:</p>
                         </Col>
-                        <Col xs={4} md={4}>
-                            <p className='dataval'>{weatherData.timezone}</p>
-                        </Col>
-                        <Col xs={4} md={4}>
+                        <Col xs={6} md={4}>
                             <p className='dataval'>{weatherData.timezone}</p>
                         </Col>
                     </Row>
