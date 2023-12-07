@@ -12,7 +12,6 @@ function Weather(props) {
     return (
         <section className={styles.layout}>
             <h6 className={styles.heading}>16 Day Weather Forecasts</h6>
-
             <div className='alldata'>
                     <Container className='alldataContainer'>
                         <Row>
