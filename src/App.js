@@ -9,10 +9,15 @@ import Errors from "./components/Errors/Errors.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const API_KEY = process.env.REACT_APP_API_KEY
-const BASE_URL=`https://us1.locationiq.com/v1/search?key=${API_KEY}`
-const WEATHER_API = 'https://city-explorer-api-iwil.onrender.com/weather'
-// const WEATHER_API = 'http://localhost:3001/weather'
+const LIQ_API_KEY = process.env.REACT_APP_API_KEY;
+const WB_API_KEY = process.env.REACT_APP_WEATHERBIT_API;
+const LIQ_API =`https://us1.locationiq.com/v1/search?key=${LIQ_API_KEY}`;
+const WB_API = `https://api.weatherbit.io/v2.0/forecast/daily?key=${WB_API_KEY}`;
+// const TMDB_API=``;
+// const MY_WEATHER_API = 'https://city-explorer-api-iwil.onrender.com/weather';
+// http://api.weatherbit.io/v2.0/forecast/hourly?
+// https://api.weatherbit.io/v2.0/current?
+// const MY_WEATHER_API = 'http://localhost:3001/weather'
 
 function App() {
 
@@ -22,12 +27,12 @@ function App() {
   const [longitude, setLongitude] = useState(-74.0060152);
   const [errors, setErrors] = useState(false);
   const [showErr, setShowErr] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState(null);
   const [isWeatherData, setIsWeatherData] = useState(false);
 
   // =========================== GET LOCATION FUNCTION
   async function getLocation(cityName) {
-    let url = `${BASE_URL}&q=${cityName}&format=json`;
+    let url = `${LIQ_API}&q=${cityName}&format=json`;
 
     try {
       let res = await axios.get(url);
@@ -46,11 +51,23 @@ function App() {
 
   // =========================== GET WEATHER DATA FUNCTION
   async function getWeather(lat, lon, city) {
-    let query = `${WEATHER_API}?lat=${lat}&lon=${lon}&q=${city}`;
+    // let query = `${MY_WEATHER_API}?lat=${lat}&lon=${lon}&q=${city}`;
+    let query = `${WB_API}&lat=${lat}&lon=${lon}&city=${city}`;
 
     try {
       let res = await axios.get(query);
-      setWeatherData(res.data);
+      
+      const Forecast = res.data.data.map(d => {
+        let arr = {
+          date : d.valid_date,
+          temp : d.temp,
+          weather : d.weather.description
+        }
+
+        return arr;
+      })
+
+      setWeatherData(Forecast);
       setIsWeatherData(true);
     } catch (err) {
       console.error(err);
@@ -73,6 +90,7 @@ function App() {
   return (
     <>
       <Header />
+
       <main>
         { 
           showErr

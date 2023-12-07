@@ -11,13 +11,10 @@
     color: gray;
     font-weight: 800;
     font-size: 20px;
+    text-align: center;
 }
 
 .city {
     font-style: italic;
     color: gray;
 }
-
-/* .alldataContainer {
-
-} */
