@@ -1,0 +1,47 @@
+.movies {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin: auto;
+    padding: 20px 10px;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin: auto;
+    margin-top: 20px;
+    padding: 40px 10px;
+}
+
+.heading {
+    color: #e7e7e7e7;
+    font-weight: 800;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 5px;
+}
+
+.city {
+    font-style: italic;
+    color: gray;
+}
+
+.movieCard {
+    border: 1px solid orangered;
+    box-shadow: rgba(231, 231, 231, 0.25) 0px 54px 55px, rgba(226, 226, 226, 0.12) 0px -12px 30px, rgba(141, 140, 140, 0.12) 0px 4px 6px, rgba(122, 122, 122, 0.17) 0px 12px 13px, rgba(177, 176, 176, 0.09) 0px -3px 5px;
+}
+
+.movieSummary {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    color: rgb(72, 92, 95);
+}
+
+.movieTitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}

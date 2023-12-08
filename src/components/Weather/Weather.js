@@ -12,17 +12,17 @@ function Weather(props) {
     return (
         <section className={styles.layout}>
             <h6 className={styles.heading}>16 Day Weather Forecasts</h6>
-            <div className='alldata'>
+            <div className={styles.alldata}>
                     <Container className='alldataContainer'>
                         <Row>
                             <Col xs={4} md={4}>
-                                <p className='datakey'>Date:</p>
+                                <p className={styles.datakey}>Date</p>
                             </Col>
                             <Col xs={4} md={4}>
-                                <p className='datakey'>Temperature</p>
+                                <p className={styles.datakey}>Temperature</p>
                             </Col>
                             <Col xs={4} md={4}>
-                                <p className='datakey'>Weather</p>
+                                <p className={styles.datakey}>Weather</p>
                             </Col>
                         </Row>
 
@@ -30,13 +30,13 @@ function Weather(props) {
                             return (
                                 <Row key={key}>
                                     <Col xs={4} md={4}>
-                                        <p className='dataval'>{data.date}</p>
+                                        <p className={styles.dataval}>{data.date}</p>
                                     </Col>
                                     <Col xs={4} md={4}>
-                                        <p className='dataval'>{data.temp}&deg;C</p>
+                                        <p className={styles.dataval}>{data.temp}&deg;C</p>
                                     </Col>
                                     <Col xs={4} md={4}>
-                                        <p className='dataval'>{data.weather}</p>
+                                        <p className={styles.dataval}>{data.weather}</p>
                                     </Col>
                                 </Row>
                             )
