@@ -1,34 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
 
+:root {
+  --darkteal: #002b36;
+  --white: #ffffff;
+  --bodytext: rgb(199, 205, 207);
+}
+
 main {
   min-height: 86vh;
-}
-
-.alldata {
-  display: flex;
-  justify-content: center;
-  font-family: 'Dhurjati', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.datakey {
-  font-weight: 700;
-  border-bottom: 2px solid black;
-}
-
-.dataval {
-  color: rgb(204, 87, 45);
-  border-bottom: 2px solid grey;
-}
-
-.main-heading {
-  text-align: center;
-  color: rgb(0, 0, 0);
-  text-shadow: 4px 4px 4px rgb(21, 50, 51);
-  background-color: cadetblue;
-  margin: 0;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.24);
 }
 
 .coordinates {
@@ -46,13 +26,21 @@ main {
 .coordinates>li {
   list-style: none;
   font-style: italic;
-  color: rgb(44, 44, 44);
-  text-shadow: 4px 4px 4px #aaa;
+  color: var(--bodytext);
 }
 
 .coordinates span {
+  .main-heading {
+    text-align: center;
+    color: var(--white);
+    text-shadow: 4px 4px 4px rgb(21, 50, 51);
+    background-color: var(--darkteal);
+    margin: 0;
+    padding: 10px;
+  }
+
   font-weight: 500;
-  color: rgb(47, 47, 182);
+  color: orangered;
 }
 
 .location {
@@ -71,7 +59,6 @@ main {
 }
 
 .location-name {
-  color: rgb(30, 37, 37);
   font-weight: 800;
   font-style: italic;
 }
@@ -86,18 +73,29 @@ main {
   justify-items: center;
 }
 
+p {
+  color: var(--bodytext);
+}
+
 p.instructions {
   text-align: center;
   margin-top: 5px;
   margin-bottom: 0;
   font-family: 'Dhurjati', sans-serif;
   font-size: 22px;
+  color: var(--white);
 }
 
 p.p-info {
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 0;
   text-align: center;
+  color: #e7e7e7e7;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 5px;
 }
 
 p.error {
@@ -114,15 +112,29 @@ p.error {
   justify-content: center;
 }
 
-.map > div {
+.map>div {
   border: 5px solid grey;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.main-heading {
+  text-align: center;
+  color: var(--white);
+  text-shadow: 4px 4px 4px rgb(21, 50, 51);
+  background-color: var(--darkteal);
+  border-bottom: 1px solid orangered;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin: 0;
+  padding: 10px;
+}
+
 .footer {
   text-align: center;
   padding: 10px;
-  background-color: cadetblue;
+  background-color: var(--darkteal);
+  border-top: 1px solid orangered;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  color: var(--white);
   font-family: 'Times New Roman', Times, serif;
 }

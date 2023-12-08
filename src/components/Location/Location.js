@@ -24,7 +24,6 @@ function Location(props) {
     setTypedInCity(inputValue);
     // Mark the input as invalid if it contains anything other than the allowed characters
     setValidated(isValidInput);
-
     // Show suggestions based on the input value
     if (isValidInput) {
       const matchingCities = findMatchingCities(inputValue);
@@ -71,9 +70,13 @@ function Location(props) {
     setSuggestions([]);
   }
 
+  // =================================> REACT RENDER
   return (
     <section className={styles.location}>
-      <p className='instructions'>Enter a city name to begin exploring:</p>
+      <p className='instructions'>
+        City Explorer is a web application designed and implemented to provide you with a comprehensive exploration experience of various cities. The app was built to enhance your ability to plan trips. Let's Explore!
+      </p>
+      <p className='instructions'>| Enter a city name to begin exploring |</p>
 
       <Form
         className='location-form'
@@ -114,7 +117,7 @@ function Location(props) {
           </Col>
 
           <Col xs="auto">
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Explore</Button>
           </Col>
         </Row>
 
@@ -122,10 +125,9 @@ function Location(props) {
           showHeading && props.city && (
             <p className='p-info'>
               Information about &nbsp;
-              <span className='location-name'>{props.city}</span>:
+              <span className='location-name'>{props.city}</span>
             </p>
           )}
-
       </Form>
 
       <ul className='coordinates'>

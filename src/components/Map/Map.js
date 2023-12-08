@@ -8,17 +8,15 @@ const mapContainerStyle = {
     height: '60vh',
 };
 
-// EXPORTS
+
 function Map(props) {
-    // =========================== GMAP FUNCTION
+    // ============> GMAP FUNCTION
     let lat = Number(props.lat);
     let long = Number(props.long);
-
     const center = {
-        lat: lat, // default latitude
-        lng: long, // default longitude
+        lat: lat,
+        lng: long,
     };
-
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: GMAP_KEY,
         libraries,

@@ -8,13 +8,37 @@
 }
 
 .heading {
-    color: gray;
+    color: #e7e7e7e7;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 5px;
 }
 
 .city {
     font-style: italic;
     color: gray;
+}
+
+.alldata {
+    display: flex;
+    justify-content: center;
+    font-family: 'Dhurjati', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.datakey {
+    font-weight: 700;
+    text-align: center;
+}
+
+.dataval {
+    color: rgb(204, 87, 45);
+    border: 2px solid rgba(128, 128, 128, 0.274);
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(2, 49, 43, 0.233);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
