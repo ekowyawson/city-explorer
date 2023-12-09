@@ -61,7 +61,7 @@ function Location(props) {
               onChange={handleChange}
             />
             <Form.Control.Feedback type='invalid'>
-              Please enter a city and state.
+              Please enter a valid city.
             </Form.Control.Feedback>
           </Col>
           {/* Explore Button */}
