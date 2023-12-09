@@ -87,8 +87,6 @@ function App() {
       }
     };
 
-    console.log(options);
-
     try {
       const res = await axios.request(options);
       const resData = res.data.results.map(e => {
