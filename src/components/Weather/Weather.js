@@ -11,7 +11,7 @@ function Weather(props) {
 
     return (
         <section className={styles.layout}>
-            <h6 className={styles.heading}>16 Day Weather Forecasts</h6>
+            <h6 className={styles.heading}>16 Day Weather Forecast for {props.city}</h6>
             <div className={styles.alldata}>
                     <Container className='alldataContainer'>
                         <Row>
@@ -28,7 +28,7 @@ function Weather(props) {
 
                         {weatherData.map((data, key) => {
                             return (
-                                <Row key={key}>
+                                <Row key={key} className={styles.weatherRow}>
                                     <Col xs={4} md={4}>
                                         <p className={styles.dataval}>{data.date}</p>
                                     </Col>

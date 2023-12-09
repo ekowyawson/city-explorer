@@ -1,50 +1,75 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Modal from 'react-bootstrap/Modal';
 import Col from 'react-bootstrap/Col';
 
-import styles from './weather.module.css';
+import styles from './movies.module.css';
 
-function Weather(props) {
-    // let city = props.city;
-    let weatherData = props.weatherData;
+function Movie(props) {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const text_truncate = (str, length, ending) => {
+        if (length == null) {
+            length = 100;
+        }
+        if (ending == null) {
+            ending = '...';
+        }
+        if (str.length > length) {
+            return str.substring(0, length - ending.length) + ending;
+        } else {
+            return str;
+        }
+    };
 
     return (
-        <section className={styles.layout}>
-            <h6 className={styles.heading}>16 Day Weather Forecasts</h6>
-            <div className='alldata'>
-                    <Container className='alldataContainer'>
-                        <Row>
-                            <Col xs={4} md={4}>
-                                <p className='datakey'>Date:</p>
-                            </Col>
-                            <Col xs={4} md={4}>
-                                <p className='datakey'>Temperature</p>
-                            </Col>
-                            <Col xs={4} md={4}>
-                                <p className='datakey'>Weather</p>
-                            </Col>
-                        </Row>
+        <>
+            <Col key={props.key}>
+                <Card className={styles.movieCard} onClick={handleShow}>
+                    <Card.Img variant="top" src={props.img} alt={props.title} />
+                    <Card.Body>
+                        <Card.Title className={styles.movieTitle}>
+                            {props.title}
+                        </Card.Title>
+                        <Card.Text className={styles.movieSummary}>
+                            {text_truncate(props.summary, 150)}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
 
-                        {weatherData.map((data, key) => {
-                            return (
-                                <Row key={key}>
-                                    <Col xs={4} md={4}>
-                                        <p className='dataval'>{data.date}</p>
-                                    </Col>
-                                    <Col xs={4} md={4}>
-                                        <p className='dataval'>{data.temp}&deg;C</p>
-                                    </Col>
-                                    <Col xs={4} md={4}>
-                                        <p className='dataval'>{data.weather}</p>
-                                    </Col>
-                                </Row>
-                            )
-                        })}
-                    </Container>
-            </div>
-        </section>
-    )
+            {/* MODAL */}
+            <Modal className="bg-dark" show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{props.title}</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                    <Card className={styles.movieCard} data-bs-theme="dark" border="primary" style={{ margin: "1em" }}>
+                        <Card.Img variant="top" src={props.img} alt={props.title}  style={{ height: "50vh", width: "auto" }} />
+                        <Card.Body>
+                            <Card.Title className={styles.movieTitle}>
+                                {props.title}
+                            </Card.Title>
+                            <Card.Text className={styles.movieSummary}>
+                                {props.summary}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Modal.Body>
+
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
+
 }
 
-export default Weather;
+export default Movie;
